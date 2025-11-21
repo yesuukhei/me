@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   }
 }
