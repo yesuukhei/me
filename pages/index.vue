@@ -52,11 +52,8 @@
         <!-- Background Cover Image with Overlay -->
         <div class="absolute inset-0 z-0">
           <!-- auto slide cover images -->
-          <transition name="" mode="out-in">
-            <div
-              :key="coverImages[currentImageIndex]"
-              class="w-full h-full hero-cover-animation"
-            >
+          <transition name="hero-fade" mode="out-in">
+            <div :key="coverImages[currentImageIndex]" class="w-full h-full">
               <img
                 :src="coverImages[currentImageIndex]"
                 alt="Cover"
@@ -65,7 +62,7 @@
             </div>
           </transition>
           <div
-            class="absolute inset-0 bg-gradient-to-b from-gray-50/40 via-gray-50/75 to-gray-50/90 dark:from-[#050814]/30 dark:via-[#050814]/70 dark:to-[#050814]/95 backdrop-blur-[2px] hero-overlay-animation"
+            class="absolute inset-0 bg-gradient-to-b from-gray-50/40 via-gray-50/80 to-gray-50 dark:from-[#050814]/30 dark:via-[#050814]/80 dark:to-[#050814] backdrop-blur-[2px] hero-overlay-animation"
           ></div>
         </div>
 
@@ -823,7 +820,7 @@ const socialLinks = [
 
 @keyframes overlayPulse {
   0% {
-    opacity: 0.65;
+    opacity: 0.95;
   }
   100% {
     opacity: 0.95;
@@ -832,7 +829,7 @@ const socialLinks = [
 
 .hero-fade-enter-active,
 .hero-fade-leave-active {
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease-in-out;
 }
 
 .hero-fade-enter-from,
