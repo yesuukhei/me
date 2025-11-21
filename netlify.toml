@@ -5,6 +5,12 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Exclude service workers and static assets from SPA redirect
+[[redirects]]
+  from = "/firebase-messaging-sw.js"
+  to = "/404.html"
+  status = 404
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

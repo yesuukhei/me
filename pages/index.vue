@@ -57,7 +57,7 @@
               <img
                 :src="coverImages[currentImageIndex]"
                 alt="Cover"
-                class="w-full h-full object-cover object-center"
+                class="w-full h-full object-cover object-center hero-cover-animation"
               />
             </div>
           </transition>
@@ -539,10 +539,13 @@
 </template>
 
 <script setup lang="ts">
-import profileImage from "~/assets/images/me.jpg";
-import coverImage from "~/assets/images/cover.png";
 import { ref, onMounted, onUnmounted } from "vue";
+import { useDarkMode } from "../composables/useDarkMode";
 
+const profileImage = "/images/me.jpg";
+
+// useHead is auto-imported by Nuxt
+// @ts-expect-error - Nuxt auto-import (works at runtime)
 useHead({
   title: "Yesuukhei | Portfolio",
   meta: [
@@ -680,9 +683,12 @@ onMounted(() => {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href")!);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const href = this.getAttribute("href");
+      if (href && href !== "#" && href.length > 1) {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }
     });
   });
