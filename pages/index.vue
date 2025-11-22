@@ -484,7 +484,9 @@
               </div>
             </div>
           </div>
-
+          <p class="mb-4 text-lg font-medium">
+            Here is the project modules that i have worked on and more!.
+          </p>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div
               v-for="(module, index) in project.modules"
@@ -1122,7 +1124,7 @@ const project: Project = {
   image: "/images/skills/lera_icon.png",
   overview: `Full Stack Developer (2 years, 2023 - Present).
 Developed end-to-end features for an enterprise SaaS platform, handling everything from database design to mobile deployment.
-Built cross-platform modules used by multiple companies for employee engagement and operational efficiency.`,
+Built cross-platform modules used by multiple companies for employee engagement and operational efficiency. and ofc fixing bugs and improving other modules as well.`,
   technologies: [
     "Nuxt.js",
     "Vue.js",
